@@ -2,12 +2,12 @@
 1. Make sure you have docker installed
 2. Create the network `docker network create wisdo-network`
 3. Before running the containers, add the following to your .env file:
-```MONGO_HOST=mongodb
-NODE_ENV=local
-MONGO_USER=wisdo
-MONGO_PASSWORD=wisdo12345
-```
-These credentials are only for the local env to test the functionality.
+   ```MONGO_HOST=mongodb
+   NODE_ENV=local
+   MONGO_USER=wisdo
+   MONGO_PASSWORD=wisdo12345
+   ```
+   These credentials are only for the local env to test the functionality.
 4. Run `docker-compose up --build -d` to build the containers and run them
 5. By starting the containers, a user with the same credentials as above will be created in the DB.
 6. You can use the following Postman collection to test the API:

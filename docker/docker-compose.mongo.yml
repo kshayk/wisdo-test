@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mongodb:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=wisdo
+      - MONGO_INITDB_ROOT_PASSWORD=wisdo12345
+    volumes:
+      - mongodb-data:/data/db
+      - ./mongod.conf:/etc/mongod.conf
+      - ./create-mongo-user.sh:/docker-entrypoint-initdb.d/create-user.sh
+    command: ["mongod", "--config", "/etc/mongod.conf"]
+    networks:
+      - wisdo-network
